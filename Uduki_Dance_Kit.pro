@@ -25,10 +25,30 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    form.cpp
+    udkbone.cpp \
+    udkjoint.cpp \
+    udkparts.cpp \
+    udkmesh.cpp \
+    udkglobaldata.cpp \
+    udktimeline.cpp \
+    partssettingdialog.cpp
 
 HEADERS  += mainwindow.h \
-    form.h
+    udkbone.h \
+    udkjoint.h \
+    udkparts.h \
+    udkslerpcontainer.h \
+    udkmesh.h \
+    udkglobaldata.h \
+    udktimeline.h \
+    partssettingdialog.h
 
 FORMS    += mainwindow.ui \
-    form.ui
+    partssettingdialog.ui
+
+DEPENDPATH += /opt/local/include
+INCLUDEPATH += /opt/local/include
+LIBS += -L/opt/local/lib/ \
+     -lopencv_core \
+     -lopencv_imgproc \
+     -lopencv_highgui
